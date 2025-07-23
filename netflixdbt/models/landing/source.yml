@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: NETFLIX
+    database: NETFLIX
+    schema: PUBLIC
+    tables:
+      - name: GENOME_SCORES_RAW
+        columns:
+          - name: movieId
+          - name: tagId
+          - name: relevance
+      - name: GENOME_TAGS_RAW
+        columns:
+          - name: tagId
+          - name: tag
+      - name: LINKS_RAW
+        columns:
+          - name: movieId
+          - name: imdbId
+          - name: tmdbId
+      - name: MOVIES_RAW
+        columns:
+          - name: movieId
+          - name: title
+          - name: genres
+      - name: RATINGS_RAW
+        columns:
+          - name: userId
+          - name: movieId
+          - name: rating
+          - name: timestamp
+      - name: TAGS_RAW
+        columns:
+          - name: userId
+          - name: movieId
+          - name: tag
+          - name: timestamp

@@ -1,0 +1,24 @@
+models: 
+  - name: mart_movie_analysis
+    description: Fact table providing analytical metrics and aggregations for movies, such as average ratings and number of ratings.
+    columns:
+      - name: movie_title
+        description: Title of the movie
+      - name: average_rating
+        description: Average user rating for the movie
+      - name: total_ratings
+        description: Total number of ratings received by the movie
+
+  - name: mart_movie_release
+    description: Mart table containing movie release information, including user ratings and release info availability.
+    columns:
+      - name: user_id
+        description: Unique identifier for the user who rated the movie
+      - name: movie_id
+        description: Foreign key to dim_movies
+      - name: rating
+        description: Rating given by the user to the movie
+      - name: rating_timestamp
+        description: Timestamp when the rating was given
+      - name: release_info_available
+        description: Indicates whether release information is available for the movie
