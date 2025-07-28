@@ -1,5 +1,6 @@
 ## My_Portfolio
 This repository showcases my personal data projects, each utilizing different tools across various stages of data processing:
+* **Templates**: This project contains `SQL` queries, `DBT` models, `Python` scripts and `Kestra` workflow files designed to illustrate common analytical methodologies. All queries and `DBT` models are developed to run efficiently within a `Google BigQuery` environment. The contents are categorized by the type of analysis or the tool used. All sensitive information, proprietary data, and company-specific identifiers have been meticulously removed and abstracted to ensure compliance with confidentiality agreements. (ongoing)
 * **IPL_DATA_ANALYSIS**: This project involves a comprehensive analysis of sports data, leveraging the computing capabilities of `Databricks` and `Spark` to extract insights and trends, with the data being stored in `Azure Storage Accounts`.
 * **NetflixDBT**: This project focuses on building a robust data pipeline for movie data, integrating various cloud technologies such as `AWS S3` for raw data storage, `Snowflake` as a data warehouse, `DBT` for data transformation, and `Power BI` for data visualization.
 ![NetflixDBT Architecture](netflixdbt/images/Architecture.png "NetflixDBT Architecture")
