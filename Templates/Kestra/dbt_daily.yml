@@ -1,0 +1,47 @@
+id: dbt_daily
+namespace: prod
+tasks:
+  - id: working_dir
+    type: io.kestra.plugin.core.flow.WorkingDirectory
+    tasks: 
+      - id: clone_git_repo
+        type: io.kestra.plugin.git.Clone
+        url: 
+        branch: main
+        username : "{{ secret('GIT_USERNAME') }}"
+        password : "{{ secret('GIT_MDP') }}" 
+
+      - id: dbt_key
+        type: io.kestra.plugin.core.storage.LocalFiles
+        inputs:
+          key.json : "{{read('key.json')}}"
+
+      - id: profile
+        type: io.kestra.plugin.core.storage.LocalFiles
+        inputs:
+          profiles.yml: |
+            default:
+              target: prod
+              outputs:
+                prod:
+                  type: bigquery
+                  project: {{ secret('GCP_PROJECT_ID') }}
+                  dataset: {{ secret('GCP_DATASET_ID') }}
+                  threads: 4
+                  method: service-account
+                  location: EU
+                  keyfile: key.json
+
+      - id: dbt
+        type: io.kestra.plugin.scripts.shell.Commands
+        docker:
+          image: ghcr.io/kestra-io/dbt-bigquery:latest
+        beforeCommands:
+          - dbt deps
+        commands:
+          - dbt build -t prod
+        
+triggers:
+  - id: schedule
+    type: io.kestra.plugin.core.trigger.Schedule
+    cron: "00 9 * * *"

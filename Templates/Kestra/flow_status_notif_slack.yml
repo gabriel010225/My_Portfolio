@@ -1,0 +1,32 @@
+id: flow_status_nofif_slack
+namespace: 
+
+tasks:
+  - id: send
+    type: io.kestra.plugin.notifications.slack.SlackIncomingWebhook
+    url: ""
+    payload: |
+      {
+        "blocks": [
+          {
+            "type": "section",
+            "text": {
+              "type": "mrkdwn",
+              "text": "*Flow*: `{{ trigger.namespace }}.{{ trigger.flowId }}`\n*Status*: {{ trigger.state == 'FAILED' ? ':red_circle: `FAILED`' : (trigger.state == 'WARNING' ? ':large_orange_circle: `WARNING`' : '`UNKNOWN`') }}\n*Flow URL*: <http://kestra.xx/ui/flows/edit/{{ trigger.namespace }}/{{ trigger.flowId }}|Link>\n*Execution URL*: <http://kestra.xx/ui/executions/{{ trigger.namespace }}/{{ trigger.flowId }}/{{ trigger.executionId }}|Link>"
+            }
+          }
+        ]
+      }
+
+triggers:
+  - id: listen
+    type: io.kestra.plugin.core.trigger.Flow
+    conditions:
+      - type: io.kestra.plugin.core.condition.ExecutionStatus
+        in:
+          - FAILED
+      - type: io.kestra.plugin.core.condition.ExecutionNamespace
+        namespace: 
+        prefix: true
+
+disabled: false
