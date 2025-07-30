@@ -1,7 +1,13 @@
 This project serves as a collection of frequently used analytical queries, scripts and data flow templates which are derived from common data analysis patterns I've encountered in professional settings, abstracted to be generalizable and reusable. __More sensitive client-specific information, as well as their own business tools and solutions tailored to individual client needs, are not included here.__ This repository is continuously being updated with new templates and refinements.
 
 **About This Project**  
-This project contains `SQL` queries, `DBT` models, `Python` scripts and `Kestra` workflow files designed to illustrate common analytical methodologies. All queries and `DBT` models are developed to run efficiently within a `Google BigQuery` environment. The contents are categorized by the type of analysis or the tool used. All sensitive information, proprietary data, and company-specific identifiers have been meticulously removed and abstracted to ensure compliance with confidentiality agreements.
+This project contains `SQL` queries, `DBT` models, `Python` scripts, and `Kestra` workflow files. These assets are specifically designed to illustrate common analytical methodologies and data processing practices within my working environment. All queries and `DBT` models are developed to run efficiently within a `Google Cloud Platform` environment, leveraging its robust capabilities for large-scale data processing. The content is meticulously categorized by the type of analysis or the primary tool used, ensuring clarity and ease of navigation.
+
+*Please note: All sensitive information, proprietary data, and company-specific identifiers have been meticulously removed and abstracted to ensure strict compliance with confidentiality agreements.*
+
+![Workflow Diagram](images/workflow.png "Workflow Diagram")
+
+The detailed introduction of this workflow diagram please see the README.md of this repository.
 
 **Structure and Contents**  
 The project is structured to reflect different stages of data transformation and analysis, as well as specific domain applications.
