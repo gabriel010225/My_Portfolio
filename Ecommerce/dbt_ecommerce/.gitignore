@@ -3,5 +3,6 @@ target/
 dbt_packages/
 logs/
 dbt_internal_packages/
-analyses/
+profiles.yml
 tests/
+analyses/

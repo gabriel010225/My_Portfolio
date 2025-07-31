@@ -1,0 +1,23 @@
+version: 2
+sources:
+  - name: ECOMMERCE 
+    database: ECOMMERCE     
+    schema: RAW_DATA       
+    tables:
+      - name: CUSTOMERS
+        columns:
+          - name: customer_id
+          - name: email
+          - name: name
+      - name: ORDERS
+        columns:
+          - name: customer_id
+          - name: order_date
+          - name: order_id
+      - name: SHIPMENTS
+        columns:
+          - name: delivered_at
+          - name: order_id
+          - name: shipment_id
+          - name: shipped_at
+          - name: status

@@ -1,0 +1,11 @@
+models:
+  - name: order_status
+    columns:
+      - name: order_id
+      - name: customer_name
+      - name: order_date
+      - name: status
+      - name: shipped_at
+      - name: delivered_at
+      - name: delivery_hours
+      - name: final_status
