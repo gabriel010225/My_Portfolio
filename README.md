@@ -68,8 +68,13 @@ This project showcases a data pipeline, starting with dummy E-commerce Data gene
 ### Moderne_DE_CICD ###
 Incorporating `CI/CD`, this architecture leverages `Terraform` to declaratively provision and manage the `Azure` data pipeline components (`Resource Groups`, `Storage Accounts`, `Data Factory`), enabling automated and consistent deployments.
 ![CICD Architecture](Moderne_DE_CICD/images/Architecture.png "CICD Architecture")
+### Looker Studio ###
+This folder showcases a collection of data visualization templates, all meticulously designed and created using `Looker Studio` to present complex data in an intuitive and interactive manner.
+* **Product Analysis**: This dashboard [`(link)`](https://lookerstudio.google.com/reporting/8e126dee-86ee-4c83-8eb3-92f7f9c0b391/page/kPLTF) offers a comprehensive analysis (including profit and segment ABC) of various marketing metrics for the products, providing multi-faceted insights for product performance evaluation and strategic decision-making.
+![Product Analysis](LookerStudio/PRODUCT_ANALYTICS_REPORTING/OVERVIEW.png "Product Analysis Dashboard")
+
 ### PowerBI ###
-This project showcases a versatile collection of data visualization templates, all meticulously designed and created using `Power BI` to present complex data in an intuitive and interactive manner.
+This folder showcases a collection of data visualization templates, all meticulously designed and created using `Power BI` to present complex data in an intuitive and interactive manner.
 * **Banking Churn**: This dashboard offers a comprehensive analysis of banking customer churn and its distribution according to various segmentation criteria, providing multi-faceted insights for retention strategies.
 ![Banking Churn](PowerBI/Banking%20Churn/Banking%20Churn.png "Banking Churn Dashboard")
 * **Finance KPI**: This dashboard provides an executive overview of sales performance, tracking total sales against targets, variance, and month-over-month trends.
